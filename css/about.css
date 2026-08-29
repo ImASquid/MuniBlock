@@ -1,0 +1,115 @@
+/* ============================= ABOUT PAGE ============================= */
+
+.about-intro { margin-bottom: 90px; }
+
+.about-intro .grid-2 h2.section-title {
+    color: var(--text);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 1.5rem;
+}
+
+.about-intro .grid-2 h2.section-title i {
+    color: var(--cyan);
+    font-size: 1.2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.about-intro .grid-2 p { color: var(--text-dim); }
+
+/* --- Team callout --- */
+.team-panel {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 46px;
+    align-items: center;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 50px clamp(24px, 4vw, 56px);
+    margin-bottom: 90px;
+}
+
+@media (max-width: 900px) {
+    .team-panel { grid-template-columns: 1fr; gap: 30px; }
+}
+
+.team-panel .eyebrow { margin-bottom: 14px; }
+.team-panel h2 { font-size: 1.8rem; margin-bottom: 18px; }
+.team-panel p { color: var(--text-dim); }
+
+.team-badges { display: grid; gap: 16px; }
+.team-badge {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-sm);
+}
+.team-badge i { color: var(--cyan); font-size: 1.2rem; width: 26px; text-align: center; }
+.team-badge span { font-size: 0.92rem; color: var(--text); font-weight: 500; }
+
+/* --- Advantage grid --- */
+.advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-top: 10px;
+}
+
+/* --- Mini stat row --- */
+.mini-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+@media (max-width: 760px) { .mini-stats { grid-template-columns: 1fr; } }
+
+.mini-stat {
+    text-align: center;
+    padding: 34px 20px;
+}
+.mini-stat .stat-num { font-size: 2.2rem; }
+
+/* --- Endorsement strip --- */
+.endorsement-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 34px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background: var(--glass);
+}
+
+.endorsement-strip .badge-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(145deg, rgba(0, 229, 255, 0.16), rgba(124, 92, 255, 0.1));
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--cyan);
+    flex-shrink: 0;
+}
+
+.endorsement-strip h5 { font-size: 1rem; margin-bottom: 4px; }
+.endorsement-strip p { font-size: 0.86rem; color: var(--text-dim); }

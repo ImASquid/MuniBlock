@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | MuniBlock</title>
+    <meta name="description" content="Partner with MuniBlock to modernize your municipality's financial infrastructure with secure, immutable ledger technology.">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="contact-wrapper">
+        <div class="contact-hero-text reveal">
+            <div class="eyebrow">Get In Touch</div>
+            <h1>Partner with <span class="text-gradient">MuniBlock</span></h1>
+            <p>Modernize your financial infrastructure with secure, immutable ledger technology — built specifically for city, county, and state government.</p>
+
+            <div class="contact-features">
+                <div class="feat"><i class="fas fa-circle-check"></i> Faster Issuance Cycles</div>
+                <div class="feat"><i class="fas fa-circle-check"></i> Reduced Intermediary Dependency</div>
+                <div class="feat"><i class="fas fa-circle-check"></i> Immutable Financial Records</div>
+                <div class="feat"><i class="fas fa-circle-check"></i> Real-Time Transparency</div>
+            </div>
+
+            <div class="direct-contact-info">
+                <h3>Direct Contact</h3>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span>Email Us</span>
+                        <p><a href="mailto:info@muniblock.com">EMAIL_HERE</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <span>Call Us</span>
+                        <p><a href="tel:8884448169">000-000-0000</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-location-dot"></i>
+                    <div>
+                        <span>Headquarters</span>
+                        <p>San Marcos, Texas, United States</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="questionnaire" class="q-container reveal">
+            <div class="form-card">
+                <div class="form-header">
+                    <h2>MuniBlock Questionnaire</h2>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="p-bar"></div>
+                    </div>
+                    <span class="progress-text" id="p-text">Step 1 of 4: Municipality Profile</span>
+                </div>
+
+                <form id="ms-questionnaire" action="https://formspree.io/f/mojpoona" method="POST" class="styled-form">
+                    <div class="form-step step-active">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Municipality Name</label>
+                                <input type="text" name="municipality_name" placeholder="e.g. Chicago, Illinois" required>
+                            </div>
+                            <div class="input-group">
+                                <label>State / Region</label>
+                                <input type="text" name="state" required>
+                            </div>
+                        </div>
+                        <button type="button" class="btn next-btn btn-block" style="margin-top: 24px;">Next: Fiscal Objectives &rarr;</button>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Primary Financial Vehicle</label>
+                                <select name="financial_vehicle">
+                                    <option>General Obligation Bonds</option>
+                                    <option>Revenue Bonds</option>
+                                    <option>Grant Distribution</option>
+                                    <option>Internal Treasury Management</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Estimated Annual Issuance Volume</label>
+                                <select name="issuance_volume">
+                                    <option>&lt; $3M</option>
+                                    <option>$3M - $10M</option>
+                                    <option>$10M - $100M</option>
+                                    <option>$100M - $500M</option>
+                                    <option>$500M+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 12px; margin-top: 24px;">
+                            <button type="button" class="btn btn-outline prev-btn">Back</button>
+                            <button type="button" class="btn next-btn">Next: Infrastructure &rarr;</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="checkbox-sections">
+                            <div class="checkbox-col">
+                                <h4>Primary Challenges</h4>
+                                <label class="check-item"><input type="checkbox" name="challenge" value="Bond Costs"> Bond Issuance Costs</label>
+                                <label class="check-item"><input type="checkbox" name="challenge" value="Audit"> Audit Transparency</label>
+                                <label class="check-item"><input type="checkbox" name="challenge" value="Grants"> Grant Tracking</label>
+                            </div>
+                            <div class="checkbox-col">
+                                <h4>Current Infrastructure</h4>
+                                <label class="check-item"><input type="checkbox" name="infrastructure" value="Cloud ERP"> Cloud-Based ERP</label>
+                                <label class="check-item"><input type="checkbox" name="infrastructure" value="Legacy Servers"> Legacy On-Prem Servers</label>
+                                <label class="check-item"><input type="checkbox" name="infrastructure" value="Third Party Audit"> Third-Party Audit Firm</label>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 12px;">
+                            <button type="button" class="btn btn-outline prev-btn">Back</button>
+                            <button type="button" class="btn next-btn">Next: Timeline &amp; Finalize &rarr;</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Implementation Timeline</label>
+                                <select name="timeline">
+                                    <option>Immediate (0-3 Months)</option>
+                                    <option>Planning Phase (3-6 Months)</option>
+                                    <option>Next Fiscal Year</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Project Priority Level</label>
+                                <select name="priority">
+                                    <option>Exploratory / Research</option>
+                                    <option>Active RFP</option>
+                                    <option>Critical Infrastructure Update</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row" style="margin-top: 20px;">
+                            <div class="input-group">
+                                <label>Your Name</label>
+                                <input type="text" name="contact_person" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Official Email</label>
+                                <input type="email" name="email" required>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 12px; margin-top: 24px;">
+                            <button type="button" class="btn btn-outline prev-btn">Back</button>
+                            <button type="submit" class="btn">Submit Consultation Request</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

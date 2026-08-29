@@ -1,0 +1,193 @@
+/* ============================= HOME / INDEX ============================= */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: calc(var(--nav-h) + 40px) 6% 100px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.network-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 38%, rgba(0, 229, 255, 0.10), transparent 65%),
+        radial-gradient(ellipse 50% 40% at 80% 75%, rgba(124, 92, 255, 0.10), transparent 60%);
+    pointer-events: none;
+}
+
+.hero-inner { max-width: 900px; position: relative; }
+
+.hero .eyebrow { justify-content: center; }
+
+.hero h1 {
+    font-size: clamp(2.4rem, 5.6vw, 4.4rem);
+    margin-bottom: 22px;
+}
+
+.hero-sub {
+    color: var(--text-dim);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    max-width: 680px;
+    margin: 0 auto 40px;
+}
+
+.hero-btns { margin-bottom: 26px; }
+
+.hero-note {
+    font-size: 0.8rem;
+    color: var(--text-dimmer);
+    letter-spacing: 0.03em;
+}
+
+.scroll-cue {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dimmer);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: floatY 2.6s ease-in-out infinite;
+}
+
+.scroll-cue .line { width: 1px; height: 30px; background: linear-gradient(180deg, var(--cyan), transparent); }
+
+@keyframes floatY {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 8px); }
+}
+
+/* Stat strip sits half-overlapping the hero bottom */
+.stat-strip-wrap { margin-top: -70px; position: relative; z-index: 2; }
+
+/* --- Ecosystem feature grid --- */
+.ecosystem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+@media (max-width: 900px) { .ecosystem-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .ecosystem-grid { grid-template-columns: 1fr; } }
+
+.eco-card {
+    padding: 34px 30px;
+}
+
+.eco-card .icon-badge { margin-bottom: 20px; }
+.eco-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.eco-card p { color: var(--text-dim); font-size: 0.9rem; }
+
+/* --- Split: before/after teaser --- */
+.teaser-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 860px) { .teaser-split { grid-template-columns: 1fr; } }
+
+.teaser-box {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: 34px;
+}
+
+.teaser-box.risk { background: linear-gradient(160deg, rgba(248, 113, 113, 0.08), rgba(13, 20, 32, 0.3)); }
+.teaser-box.solve { background: linear-gradient(160deg, rgba(0, 229, 255, 0.08), rgba(13, 20, 32, 0.3)); border-color: rgba(0, 229, 255, 0.28); }
+
+.teaser-box h4 {
+    font-size: 0.86rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+    color: var(--text-dim);
+}
+
+.teaser-box.solve h4 { color: var(--cyan); }
+
+.teaser-box ul { display: grid; gap: 14px; }
+.teaser-box li { display: flex; gap: 10px; align-items: center; font-size: 0.96rem; }
+.teaser-box.risk li i { color: var(--red); }
+.teaser-box.solve li i { color: var(--cyan); }
+
+/* --- Growth chart teaser --- */
+.growth-panel {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 50px clamp(20px, 4vw, 56px);
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 50px;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .growth-panel { grid-template-columns: 1fr; gap: 36px; }
+}
+
+.growth-copy h3 { font-size: 1.7rem; margin-bottom: 14px; }
+.growth-copy p { color: var(--text-dim); margin-bottom: 26px; }
+
+.growth-stats { display: flex; gap: 30px; margin-bottom: 30px; }
+.growth-stats .stat-num { font-size: 2rem; margin-bottom: 4px; }
+.growth-stats .stat-label { font-size: 0.78rem; }
+
+/* --- Case teaser cards --- */
+.case-teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+@media (max-width: 900px) { .case-teaser-grid { grid-template-columns: 1fr; } }
+
+/* --- Final CTA banner --- */
+.cta-banner {
+    text-align: center;
+    border-radius: var(--radius-lg);
+    padding: 70px 6%;
+    background: linear-gradient(160deg, rgba(0, 229, 255, 0.10), rgba(124, 92, 255, 0.08));
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse 70% 100% at 50% 50%, #000, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 100% at 50% 50%, #000, transparent 80%);
+}
+
+.cta-banner h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin-bottom: 16px; position: relative; }
+.cta-banner p { color: var(--text-dim); max-width: 560px; margin: 0 auto 34px; position: relative; }
+.cta-banner .hero-btns { position: relative; }

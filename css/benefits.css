@@ -1,0 +1,79 @@
+/* ============================= BENEFITS PAGE ============================= */
+
+.dual-header-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 90px;
+}
+@media (max-width: 860px) { .dual-header-section { grid-template-columns: 1fr; gap: 34px; } }
+.dual-header-section .eyebrow { margin-bottom: 14px; }
+.dual-header-section h3 { font-size: 1.6rem; margin-bottom: 16px; }
+.dual-header-section p { color: var(--text-dim); }
+
+.challenge-copy { max-width: 780px; margin: 0 auto 70px; text-align: center; }
+.challenge-copy p { color: var(--text-dim); margin-bottom: 16px; }
+.challenge-copy p:last-child { margin-bottom: 0; }
+
+/* --- ROI summary table styling handled by global .data-table --- */
+.roi-callout-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+@media (max-width: 860px) { .roi-callout-grid { grid-template-columns: 1fr; } }
+
+.roi-callout {
+    padding: 34px 28px;
+    text-align: center;
+    border-top: 3px solid var(--cyan);
+}
+.roi-callout.moderate { border-top-color: var(--violet); }
+.roi-callout.full { border-top-color: var(--green); }
+
+.roi-callout .roi-tag {
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    display: block;
+}
+.roi-callout .roi-figure {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+.roi-callout p.roi-desc { color: var(--text-dim); font-size: 0.86rem; }
+
+.roi-note {
+    text-align: center;
+    color: var(--text-dimmer);
+    font-size: 0.82rem;
+    margin-top: 22px;
+}
+
+/* --- Summary cards for legacy vs blockchain metrics --- */
+.metric-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+@media (max-width: 900px) { .metric-cards { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .metric-cards { grid-template-columns: 1fr; } }
+
+.metric-card { padding: 28px 24px; }
+.metric-card .metric-name {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+}
+.metric-card .metric-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+.metric-card .metric-row .tag { font-size: 0.7rem; color: var(--text-dimmer); width: 56px; flex-shrink: 0; }
+.metric-card .metric-row .val { font-size: 0.86rem; }
+.metric-card .metric-row.legacy .val { color: var(--red); }
+.metric-card .metric-row.modern .val { color: var(--green); font-weight: 600; }

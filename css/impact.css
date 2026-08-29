@@ -1,0 +1,89 @@
+/* ============================= IMPACT & DATA PAGE ============================= */
+
+/* --- 5-year growth stat grid --- */
+.growth-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+@media (max-width: 900px) { .growth-stat-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .growth-stat-grid { grid-template-columns: 1fr; } }
+
+.growth-stat-card { padding: 30px 26px; }
+.growth-stat-card .gs-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+.growth-stat-card .gs-arrow { color: var(--text-dimmer); margin: 0 6px; font-size: 1rem; }
+.growth-stat-card .gs-title { font-size: 0.86rem; color: var(--text-dim); margin-bottom: 14px; }
+.growth-stat-card .gs-growth {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--green);
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    padding: 5px 12px;
+    border-radius: 100px;
+}
+
+/* --- Chart panels (2x2 grid for adoption charts) --- */
+.chart-panel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+@media (max-width: 860px) { .chart-panel-grid { grid-template-columns: 1fr; } }
+
+.chart-panel {
+    padding: 32px clamp(18px, 3vw, 34px) 26px;
+}
+
+.chart-panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 22px;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.chart-panel-head h4 { font-size: 1rem; }
+.chart-panel-head .growth-pill {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--cyan);
+    background: rgba(0, 229, 255, 0.08);
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    padding: 4px 11px;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+.chart-scroll { overflow-x: auto; padding-bottom: 4px; }
+.chart-scroll .bar-chart { min-width: 460px; }
+.chart-scroll.wide .bar-chart { min-width: 640px; }
+
+.chart-source { font-size: 0.74rem; color: var(--text-dimmer); margin-top: 16px; text-align: center; }
+
+/* --- Use-case breakdown --- */
+.usecase-panel { padding: 40px clamp(18px, 3vw, 50px); }
+
+/* --- Case study tag cloud (global momentum) --- */
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.tag-cloud .pill-tag { font-size: 0.82rem; }
+
+/* --- Methodology / sources footnote --- */
+.methodology-box {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--glass);
+    padding: 32px clamp(20px, 4vw, 44px);
+}
+.methodology-box h4 { font-size: 0.95rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+.methodology-box h4 i { color: var(--cyan); }
+.methodology-box p { font-size: 0.86rem; color: var(--text-dim); }

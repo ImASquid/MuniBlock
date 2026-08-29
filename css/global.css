@@ -344,8 +344,13 @@ nav ul li a.active { color: var(--cyan); }
 .nav-toggle-label {
     display: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0;
     z-index: 1001;
+    width: 28px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
 }
 
 .nav-toggle-label span,
@@ -361,16 +366,16 @@ nav ul li a.active { color: var(--cyan); }
 }
 
 .nav-toggle-label span::before,
-.nav-toggle-label span::after { content: ''; position: absolute; }
-.nav-toggle-label span::before { bottom: 8px; }
+.nav-toggle-label span::after { content: ''; position: absolute; left: 0; }
+.nav-toggle-label span::before { top: -8px; }
 .nav-toggle-label span::after { top: 8px; }
 
 .nav-toggle:checked ~ .nav-toggle-label span { background: transparent; }
-.nav-toggle:checked ~ .nav-toggle-label span::before { bottom: 0; transform: rotate(45deg); }
+.nav-toggle:checked ~ .nav-toggle-label span::before { top: 0; transform: rotate(45deg); }
 .nav-toggle:checked ~ .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); }
 
 @media screen and (max-width: 860px) {
-    .nav-toggle-label { display: block; }
+    .nav-toggle-label { display: flex; }
 
     .nav-cta .btn { display: none; }
 

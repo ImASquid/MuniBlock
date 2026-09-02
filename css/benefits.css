@@ -55,25 +55,57 @@
     margin-top: 22px;
 }
 
-/* --- Summary cards for legacy vs blockchain metrics --- */
+/* --- METRIC CARDS --- */
+
 .metric-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
-@media (max-width: 900px) { .metric-cards { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 1024px) { .metric-cards { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .metric-cards { grid-template-columns: 1fr; } }
 
-.metric-card { padding: 28px 24px; }
+.metric-card { 
+    padding: 24px 20px; 
+    display: flex;
+    flex-direction: column;
+}
+
 .metric-card .metric-name {
-    font-size: 0.78rem;
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--text-dim);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.08));
 }
-.metric-card .metric-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
-.metric-card .metric-row .tag { font-size: 0.7rem; color: var(--text-dimmer); width: 56px; flex-shrink: 0; }
-.metric-card .metric-row .val { font-size: 0.86rem; }
+
+.metric-card .metric-row { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 4px; 
+    margin-bottom: 16px; 
+}
+
+.metric-card .metric-row:last-child {
+    margin-bottom: 0;
+}
+
+.metric-card .metric-row .tag { 
+    font-size: 0.68rem; 
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-dimmer); 
+    width: auto; 
+    text-transform: uppercase;
+}
+
+.metric-card .metric-row .val { 
+    font-size: 0.88rem; 
+    line-height: 1.4;
+}
+
 .metric-card .metric-row.legacy .val { color: var(--red); }
 .metric-card .metric-row.modern .val { color: var(--green); font-weight: 600; }

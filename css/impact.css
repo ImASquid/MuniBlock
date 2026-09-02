@@ -32,45 +32,88 @@
     border-radius: 100px;
 }
 
-/* --- Chart panels (2x2 grid for adoption charts) --- */
+/* --- CHART PANEL SECTION --- */
+/* --- Chart Grid Layout --- */
 .chart-panel-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
 }
-@media (max-width: 860px) { .chart-panel-grid { grid-template-columns: 1fr; } }
 
+@media (max-width: 900px) {
+    .chart-panel-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Card Base Container --- */
 .chart-panel {
-    padding: 32px clamp(18px, 3vw, 34px) 26px;
+    padding: 28px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
+/* --- Header & Title Layout --- */
 .chart-panel-head {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 22px;
+    align-items: center;
+    margin-bottom: 24px;
     gap: 12px;
-    flex-wrap: wrap;
+    width: 100%;
 }
-.chart-panel-head h4 { font-size: 1rem; }
+
+.chart-panel-head h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+    color: #ffffff;
+}
+
 .chart-panel-head .growth-pill {
-    font-size: 0.76rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    color: var(--cyan);
+    color: var(--cyan, #00E5FF);
     background: rgba(0, 229, 255, 0.08);
     border: 1px solid rgba(0, 229, 255, 0.25);
-    padding: 4px 11px;
+    padding: 4px 12px;
     border-radius: 100px;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
-.chart-scroll { overflow-x: auto; padding-bottom: 4px; }
-.chart-scroll .bar-chart { min-width: 460px; }
-.chart-scroll.wide .bar-chart { min-width: 640px; }
+/* --- Scroll Container & Bar Chart Alignment --- */
+.chart-scroll { 
+    overflow: visible;
+    width: 100%;
+    margin-top: 10px;
+}
 
-.chart-source { font-size: 0.74rem; color: var(--text-dimmer); margin-top: 16px; text-align: center; }
+.chart-scroll .bar-chart,
+.chart-scroll.wide .bar-chart { 
+    min-width: 0; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12px;
+}
 
-/* --- Use-case breakdown --- */
+.bar-chart .bar-col {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* --- CASE BREAKDOWN --- */
 .usecase-panel { padding: 40px clamp(18px, 3vw, 50px); }
 
 /* --- Case study tag cloud (global momentum) --- */

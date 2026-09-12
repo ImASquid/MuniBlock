@@ -1,0 +1,163 @@
+/* ============================= TEAM PAGE ============================= */
+/* A single connected "chain" roster — each person is a node on the ledger,
+   grouped into checkpoints (Leadership / Team / Consultants). Replaces
+   separate card grids with one continuous, on-brand structure. */
+
+.roster-wrap {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+    padding-left: 4px;
+}
+
+/* The connecting line running behind every marker */
+.roster-wrap::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    bottom: 28px;
+    left: 32px;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, var(--border) 4%, var(--border) 96%, transparent);
+}
+
+/* --- Person / founder node --- */
+.chain-node {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 22px 0;
+}
+
+.node-marker {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--bg-soft);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: var(--cyan);
+    z-index: 1;
+}
+
+.node-content {
+    padding-top: 6px;
+    transition: transform var(--transition);
+}
+
+.chain-node:hover .node-content { transform: translateX(4px); }
+
+.node-content h3 { font-size: 1.08rem; margin-bottom: 8px; }
+
+.node-tag {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cyan-soft);
+    margin-bottom: 8px;
+}
+
+.node-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.node-role-tag {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--cyan);
+    background: rgba(0, 229, 255, 0.08);
+    border: 1px solid rgba(0, 229, 255, 0.22);
+    border-radius: 100px;
+    padding: 3px 12px;
+}
+
+.node-dept { font-size: 0.92rem; color: var(--text-dim); }
+
+/* --- Genesis (founder) node — the one bolder moment in the page --- */
+.genesis .node-marker {
+    font-size: 1.05rem;
+    border-color: var(--cyan);
+    box-shadow: var(--shadow-glow-cyan);
+}
+
+.genesis .node-marker::after {
+    content: "";
+    position: absolute;
+    inset: -7px;
+    border-radius: 50%;
+    border: 1px dashed rgba(0, 229, 255, 0.45);
+    animation: rotate-ring 14s linear infinite;
+}
+
+.genesis .node-content h3 { font-size: 1.3rem; }
+
+@keyframes rotate-ring {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .genesis .node-marker::after { animation: none; }
+}
+
+/* --- Checkpoint dividers (group labels sitting on the line) --- */
+.chain-checkpoint {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 10px 0;
+}
+
+.checkpoint-dot-wrap {
+    width: 56px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.checkpoint-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+}
+
+.chain-checkpoint .eyebrow { margin: 0; }
+
+/* --- Consultants: one collective node at the end of the chain --- */
+.consultants-node .node-marker { font-size: 1.15rem; }
+
+.consultant-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 4px;
+}
+
+.consultant-pills .pill-tag { font-weight: 500; color: var(--text); }
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .roster-wrap::before { left: 26px; }
+    .node-marker { width: 44px; height: 44px; font-size: 0.85rem; }
+    .genesis .node-marker { font-size: 0.92rem; }
+    .chain-node { gap: 18px; padding: 18px 0; }
+    .checkpoint-dot-wrap { width: 44px; }
+}

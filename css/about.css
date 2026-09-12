@@ -93,6 +93,21 @@
     line-height: 1.5;
 }
 
+/* Consultants card spans 3 columns on desktop (4-col grid), but must
+   shrink in step with .advantage-grid's own breakpoints below, or it
+   forces extra implicit columns and overflows the viewport on mobile. */
+.consultants-card {
+    grid-column: span 3;
+}
+
+@media (max-width: 1024px) {
+    .consultants-card { grid-column: span 2; }
+}
+
+@media (max-width: 580px) {
+    .consultants-card { grid-column: span 1; }
+}
+
 /* --- Mini stat row --- */
 .mini-stats {
     display: grid;
